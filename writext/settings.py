@@ -65,7 +65,7 @@ ROOT_URLCONF = 'writext.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["frontend/build/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'writext.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'alphly',
+        'USER': 'alphly',
+        'PASSWORD': 'alphly',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -127,8 +131,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_URL = 'staticfiles/'
+STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles/'
+STATICFILES_DIRS = [
+    BASE_DIR / "frontend" / "build/",
+    BASE_DIR / "frontend" / "build" / "static/",
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
@@ -138,3 +146,5 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode', None)
