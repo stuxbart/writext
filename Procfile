@@ -1,0 +1,1 @@
+web: gunicorn writext.wsgi --log-file
