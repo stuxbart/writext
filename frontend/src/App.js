@@ -1,38 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
-import LandingPage from './components/pages/LandingPage';
-import ContactPage from './components/pages/ContactPage';
+import { Route, Routes } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+// import './styles/App.scss';
+// import 'semantic-ui-css/semantic.min.css'
 
-<<<<<<< HEAD:frontend/src/App.tsx
-type Props = {
-  children: React.ReactNode
-=======
+
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Navbar from './components/Navbar';
+import Error404 from './pages/Error404';
+import Projects from './pages/Projects';
+import ProjectEdit from './pages/ProjectEdit';
+import Logout from './pages/Logout';
+import Register from './pages/Register';
+import LoadingSpinner from './components/LoadingSpinner';
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
->>>>>>> parent of bad434e (Switch to typescript):frontend/src/App.js
-}
+  const isAuthLoadin = useSelector((state) => state.auth.loading)
 
-const App: React.FC<Props> = ({ children }) => ( 
-  <div className="App">
-    {children}
-  </div> 
-)
+
+  return (<>
+  <Navbar />
+  <main className="w-100 m-auto">
+
+    {isAuthLoadin ? (
+    <LoadingSpinner />
+      ) : (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="login" element={<Login />} />
+      <Route path="logout" element={<Logout />} />
+      <Route path="register" element={<Register />} />
+      <Route path="projects" element={<Projects />}/>
+      <Route path="project/:projectId" element={<ProjectEdit />}/>
+      <Route path="*" element={<Error404 />} />
+    </Routes> )}
+    
+  </main>
+  </>
+  );
+}
 
 export default App;

@@ -49,7 +49,22 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'corsheaders',
+]
+
+PROJECT_APPS = [
+    'accounts',
+    'editor'
+]
+
+INSTALLED_APPS += THIRD_PARTY_APPS
+INSTALLED_APPS += PROJECT_APPS
+
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    'writext.middleware.DebugDisableCSRF',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -148,3 +163,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+}
+
+# Corsheaders settings
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ]
+    
