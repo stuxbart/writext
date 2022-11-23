@@ -1,0 +1,21 @@
+@use "../../styles/base";
+
+.projects__section {
+  height: calc(100vh - base.$editor-navbar-height);
+  max-height: calc(100vh - base.$editor-navbar-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects__section-container {
+  max-width: 100vW;
+  width: 100vW;
+  max-height: calc(100vh - base.$editor-navbar-height);
+  height: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 50px 1fr;
+}

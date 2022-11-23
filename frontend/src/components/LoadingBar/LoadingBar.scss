@@ -1,0 +1,42 @@
+@use "../../styles/base";
+
+@keyframes loadingBar {
+  0% {
+    left: 0px;
+  }
+  25% {
+    transform: scaleX(1.5);
+  }
+  50% {
+    left: calc(100% - 40px);
+    transform: scaleX(1);
+  }
+  75% {
+    transform: scaleX(1.5);
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+.loading__bar {
+  width: 100%;
+  height: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: opacity 0.3s;
+
+  &--show{
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      width: 40px;
+      height: 5px;
+      background-color: base.$primary;
+      animation: loadingBar 2s infinite;
+    }
+  }
+}

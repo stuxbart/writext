@@ -1,0 +1,11 @@
+@use "../../styles/base";
+
+.projects__folders {
+  grid-area: 1/1/3/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-right: 1px solid base.$black;
+  padding: 1em;
+}

@@ -1,0 +1,39 @@
+.loading__screen {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+.loading__screen--show {
+  display: flex;
+}
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading__text {
+  font-size: 26px;
+  font-weight: 600;
+  padding: 3em;
+}
+.loading__spinner {
+  width: 6em;
+  height: 6em;
+  border: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000000;
+  border-radius: 50%;
+  animation: load8 1.1s infinite linear;
+  transition: opacity 0.3s;
+}
+.loading__img img {
+  width: 250px;
+}

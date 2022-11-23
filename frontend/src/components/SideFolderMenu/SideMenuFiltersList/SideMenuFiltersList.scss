@@ -1,0 +1,82 @@
+@use "../../../styles/base";
+
+.projects__folder-list {
+  flex: 2;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1em;
+}
+
+.projects__folder-list_h {
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: base.$black;
+  padding: 0.5em 0.5em 0.1em 0.1em;
+  margin: 0;
+}
+
+.projects__folder-list_ul {
+  list-style: none;
+  width: 100%;
+  // border: 1px solid base.$black-25;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.projects__folder-list_li {
+  width: 100%;
+  margin: 0em;
+  // border-bottom: 1px solid base.$black-25;
+  padding: 0.9em 0.9em;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  transition: all ease-out 0.2s;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 4px;
+    background-color: base.$primary;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all ease-in 0.3s, all ease-out 0.2s;
+  }
+
+  &:hover {
+    padding: 0.9em 1.8em;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.projects__folder-list_li--active {
+  padding: 0.9em 1.5em;
+  color: base.$primary;
+
+  &::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    &::before {
+      background-color: base.$primary;
+    }
+  }
+}

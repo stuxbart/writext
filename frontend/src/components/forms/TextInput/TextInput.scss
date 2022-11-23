@@ -1,0 +1,117 @@
+@use "../../../styles/base";
+
+.form__field {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5em 1em;
+
+  .form__field-label {
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    color: base.$black;
+    padding: 0.5em 0.5em 0.1em 0.1em;
+  }
+
+  .form__field-input-action-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form__field-input {
+    width: 100%;
+    font-size: 16px;
+    color: base.$black;
+    padding: 0.75em;
+    border: 1px solid base.$black-25;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &:active,
+    &:focus {
+      border: 1px solid base.$primary;
+    }
+  }
+
+  .form__field-error {
+    width: 100%;
+    font-size: 14px;
+    padding: 0.5em;
+  }
+}
+
+.form__field--action {
+  .form__field-input {
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid base.$primary;
+    border-right-width: 0px;
+    height: 44px;
+
+    &:active,
+    &:focus {
+      border-right-width: 0px;
+      color: base.$black;
+    }
+  }
+
+  .form__field-action {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 44px;
+    font-size: 16px;
+    padding-right: 0px;
+    border: 1px solid base.$primary;
+    border-left-width: 0px;
+    background-color: base.$white;
+    border-radius: 0px 5px 5px 0px;
+    outline: none;
+    transition: all 0.2s ease;
+
+    svg {
+      margin: 0px;
+      padding: 0px;
+      height: 42px;
+      width: 42px;
+      padding: 12px;
+      border-radius: 0px 5px 5px 0px;
+      transition: all 0.2s ease;
+    }
+
+    &:hover {
+      color: base.$primary;
+
+      svg {
+        background-color: base.$ternary;
+      }
+    }
+  }
+}
+
+.form__field--error {
+  .form__field-label {
+    color: base.$error-light;
+  }
+
+  .form__field-input {
+    border: 1px solid base.$error-light;
+
+    &:active,
+    &:focus {
+      border: 1px solid base.$error;
+    }
+  }
+
+  .form__field-error {
+    color: base.$error-light;
+  }
+}

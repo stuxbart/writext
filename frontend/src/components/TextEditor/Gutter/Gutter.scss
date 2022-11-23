@@ -1,0 +1,15 @@
+@use "../../../styles/base";
+
+.editor__gutter {
+  pointer-events: none;
+  user-select: none;
+}
+
+.editor__text-multi-line-number {
+  height: 22px;
+  width: 100%;
+  max-width: 100%;
+  border-right: 1px solid base.$primary;
+  text-align: center;
+  pointer-events: none;
+}

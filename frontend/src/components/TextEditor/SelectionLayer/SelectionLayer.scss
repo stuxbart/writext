@@ -1,0 +1,13 @@
+@use "../../../styles/base";
+
+.editor__selection-layer {
+  z-index: 2;
+  opacity: 1;
+  cursor: text;
+}
+
+.editor__selection {
+  opacity: 0.5;
+  background-color: rgb(60, 90, 224);
+  position: absolute;
+}

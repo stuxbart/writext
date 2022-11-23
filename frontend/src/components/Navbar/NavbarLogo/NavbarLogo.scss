@@ -1,0 +1,23 @@
+@use "../../../styles/base";
+
+.navbar__logo {
+  flex: 1;
+  justify-content: center;
+  margin-right: 2rem;
+
+  img {
+    width: 120px;
+    height: 68px;
+    transition: transform 0.5s ease;
+    transform: scale(0.7);
+  }
+}
+
+.navbar__logo--fixed {
+  flex: 1;
+  justify-content: center;
+
+  img {
+    transform: scale(0.7);
+  }
+}

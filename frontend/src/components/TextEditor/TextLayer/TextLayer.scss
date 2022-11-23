@@ -1,0 +1,14 @@
+@use "../../../styles/base";
+
+.editor__text-editor-source--default-style {
+  .format__command {
+    color: rgb(95, 120, 232);
+    font-weight: 600;
+  }
+  .format__command-arg {
+    color: rgb(123, 52, 194);
+  }
+  .format__comment {
+    color: rgb(16, 129, 63);
+  }
+}

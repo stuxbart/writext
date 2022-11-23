@@ -1,0 +1,34 @@
+@use "../../../styles/base";
+
+.form__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+}
+
+.form__body-error {
+  width: 100%;
+  padding: 0em 1em;
+  margin: 0;
+}
+
+.form__body-error_p {
+  color: base.$error-light;
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.form__body-form {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,15 +1,12 @@
 from rest_framework.routers import SimpleRouter
-from django.urls import path
 
-from .views import (
-    ProjectViewSet,
-    ProjectGroupViewSet
-)
+from .views import ProjectViewSet, FolderViewSet, FileViewSet
 
 router = SimpleRouter()
-router.register('projects', ProjectViewSet, basename='projects')
-router.register('folders', ProjectGroupViewSet, basename='folders')
+router.register("projects", ProjectViewSet, basename="projects")
+router.register("folders", FolderViewSet, basename="folders")
+router.register("files", FileViewSet, basename="files")
 
-app_name = 'editor'
+app_name = "editor"
 
 urlpatterns = router.urls

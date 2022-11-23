@@ -1,0 +1,11 @@
+@use "../../../styles/base";
+
+.form__footer-link {
+  flex: 1;
+  padding: 0.5em;
+}
+
+.form__footer-link_a {
+  color: base.$black;
+  font-weight: 500;
+}

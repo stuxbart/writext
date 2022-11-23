@@ -16,13 +16,15 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include, re_path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import IndexView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('auth/', include('rest_framework.urls')),
-    path('accounts/', include("accounts.urls", namespace="accounts")),
-    path('editor/', include("editor.urls", namespace="editor")),
-    re_path(r'^(?:.*)/?$', IndexView.as_view(), name="index")
-]
+    path("admin/", admin.site.urls),
+    path("auth/", include("rest_framework.urls")),
+    path("accounts/", include("accounts.urls", namespace="accounts")),
+    path("editor/", include("editor.urls", namespace="editor")),
+    re_path(r"^(?:.*)/?$", IndexView.as_view(), name="index"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

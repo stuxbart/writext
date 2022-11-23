@@ -1,0 +1,61 @@
+@use "../../../styles/base";
+
+.features__container_feature {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  padding: 4rem 4rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  text-align: right;
+  line-height: 1.5em;
+  border-bottom: solid 2px;
+  border-color: base.$secondary;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+    text-align: left;
+  }
+}
+
+.feature__header {
+  flex: 1;
+
+  h1 {
+    font-size: 34px;
+    line-height: 42px;
+    color: base.$black;
+    padding: 1rem 0rem;
+  }
+
+  p {
+    color: base.$black-25;
+  }
+}
+
+.feature__image {
+  flex: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .features__container_feature {
+    flex-direction: column;
+
+    &:nth-child(2n) {
+      flex-direction: column;
+    }
+  }
+
+  .feature__header {
+    text-align: center;
+    p {
+      text-align: justify;
+    }
+  }
+}

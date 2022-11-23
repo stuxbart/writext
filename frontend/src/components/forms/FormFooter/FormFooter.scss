@@ -1,0 +1,10 @@
+@use "../../../styles/base";
+
+.form__footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}

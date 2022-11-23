@@ -1,0 +1,19 @@
+@use "../../styles/base";
+
+.projects__projects {
+  grid-area: 2/2/3/3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.projects__project-list {
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}

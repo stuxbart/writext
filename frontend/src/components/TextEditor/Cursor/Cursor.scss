@@ -1,0 +1,33 @@
+@use "../../../styles/base";
+
+@keyframes cursor-anim {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.editor__cursor {
+  position: absolute;
+  padding: 0;
+  margin: 2px 0px;
+  width: 2px;
+  height: 18px;
+  z-index: 1;
+  left: 0;
+  top: 1px;
+  opacity: 1;
+  background-color: base.$black;
+
+  pointer-events: none;
+  user-select: none;
+
+  &--animated {
+    animation-name: cursor-anim;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2, jump-none);
+  }
+}

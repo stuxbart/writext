@@ -1,0 +1,32 @@
+@use "../../styles/base";
+
+.form__section {
+  height: 90vh;
+}
+
+.form__section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 550px;
+  width: 500px;
+  background-color: base.$white;
+  border-radius: 10px;
+  padding: 2em 4em;
+  box-shadow: 2px 2px 25px base.$black-75;
+}
+
+@media screen and (max-width: 500px) {
+  .form__section {
+    height: 100vh;
+  }
+
+  .form__section-container {
+    width: 100vw;
+    background-color: base.$white;
+    border-radius: 0px;
+    padding: 1em;
+    box-shadow: none;
+  }
+}

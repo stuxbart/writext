@@ -1,0 +1,14 @@
+@use "../../styles/base";
+
+.editor__section {
+  width: 100vw;
+  height: calc(100vh - base.$editor-navbar-height);
+}
+
+.editor__section-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 250px 1fr 1fr;
+  grid-template-rows: 50% 50%;
+}

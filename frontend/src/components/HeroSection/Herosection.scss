@@ -1,0 +1,113 @@
+@use "../../styles/base";
+
+.hero {
+  min-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+}
+
+@media screen and (max-width: 770px) {
+  .hero__container {
+    flex-direction: column;
+  }
+}
+
+.hero__title {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    flex: 1;
+    font-size: 34px;
+    line-height: 42px;
+    color: base.$black;
+    padding: 4rem;
+  }
+  .hero__button {
+    flex: 1;
+    width: 50%;
+    display: block;
+    padding: 1rem 3rem;
+    background-color: base.$black;
+    color: base.$white;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 200ms;
+    align-items: center;
+    text-align: center;
+
+    &:hover {
+      background-color: base.$ternary;
+      color: base.$black;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .hero__title {
+    h1 {
+      font-size: 24px;
+      line-height: 34px;
+      padding: 1rem;
+    }
+    .hero__button {
+      padding: 1rem;
+    }
+  }
+}
+
+.hero__feature {
+  flex: 1;
+  min-height: 500px;
+  padding: 2rem;
+}
+
+.hero__feature_container {
+  background-color: base.$black;
+  min-height: 500px;
+  max-width: 700px;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__feature {
+    flex: 1;
+    padding: 2rem 0rem 2rem 2rem;
+  }
+
+  .hero__feature_container {
+    border-radius: 10px 0px 0px 10px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .hero__feature {
+    flex: 1;
+    padding: 4rem 0rem 2rem 0rem;
+    width: 100%;
+  }
+
+  .hero__feature_container {
+    border-radius: 0px;
+    max-width: 100%;
+    width: 100%;
+  }
+}

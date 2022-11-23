@@ -1,0 +1,24 @@
+@use "../../../styles/base";
+
+.form__header {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2em 4em 0.5em 4em;
+
+  .form__header_h2 {
+    font-weight: 700;
+    font-size: 24px;
+    color: base.$black;
+    text-align: center;
+  }
+
+  .form__header_p {
+    font-size: 16px;
+    color: base.$black-75;
+    text-align: center;
+    padding: 1em;
+    margin: 0;
+  }
+}

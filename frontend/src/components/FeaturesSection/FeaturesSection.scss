@@ -1,0 +1,32 @@
+@use "../../styles/base";
+
+.features {
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.features__title {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    flex: 1;
+    font-size: 34px;
+    line-height: 42px;
+    color: base.$black;
+    padding: 4rem;
+  }
+}
+
+.features__container {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+}

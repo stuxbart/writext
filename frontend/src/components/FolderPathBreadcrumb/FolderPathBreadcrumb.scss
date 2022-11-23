@@ -1,0 +1,42 @@
+@use "../../styles/base";
+
+.projects__folder-path {
+  grid-area: 1/2/2/3;
+  padding-left: 1em;
+  border-bottom: 1px solid base.$primary;
+}
+
+.projects__folder-path_ul {
+  margin: none;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.projects__folder-path_li {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+
+  button {
+    color: base.$black;
+    border: none;
+    background-color: base.$white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      color: base.$primary;
+    }
+  }
+
+  &::after {
+    content: " \\ ";
+  }
+}

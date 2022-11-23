@@ -1,0 +1,17 @@
+@use "../../../styles/base";
+
+.editor__text-input {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  max-width: 0;
+  width: 0;
+  height: 0;
+  max-height: 0;
+  outline: none;
+  border: none;
+  opacity: 0;
+
+  line-height: 22px;
+  font-size: 16px;
+}

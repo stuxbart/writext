@@ -2,16 +2,26 @@ from django.contrib import admin
 
 from .models import (
     Project,
-    ProjectGroup,
-    ProjectAuthor,
-    ProjectObserver,
+    Folder,
+    FolderUserPermissions,
+    ProjectUserPermissions,
     UserProjectSettings,
-    ProjectGroupMember
+    SourceFile,
+    MediaFile,
+    FileVersion,
+    VersionsRelation,
+    FileChange,
+    CompiledFile,
 )
 
 admin.site.register(Project)
-admin.site.register(ProjectGroup)
-admin.site.register(ProjectAuthor)
-admin.site.register(ProjectObserver)
 admin.site.register(UserProjectSettings)
-admin.site.register(ProjectGroupMember)
+admin.site.register(Folder)
+admin.site.register(FolderUserPermissions)
+admin.site.register(ProjectUserPermissions)
+admin.site.register(SourceFile)
+admin.site.register(MediaFile)
+admin.site.register(FileVersion)
+admin.site.register(VersionsRelation)
+admin.site.register(FileChange)
+admin.site.register(CompiledFile)

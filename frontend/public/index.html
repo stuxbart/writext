@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,26 +25,58 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <style>
+      .loading__screen {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1000;
+      }
+      .loading__screen--show {
+        display: flex;
+      }
+      @keyframes load8 {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .loading__text{
+        font-size: 26px;
+        font-weight: 600;
+        padding: 3em;
+      }
+      .loading__spinner {
+        width: 6em;
+        height: 6em;
+        border: 1.1em solid rgba(0, 0, 0, 0.2);
+        border-left: 1.1em solid #000000;
+        border-radius: 50%;
+        animation: load8 1.1s infinite linear;
+        transition: opacity 0.3s;
+      }
+      .loading__img img {
+        width: 250px;
+      }
+    </style>
+    <title>Writext</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="loading__screen loading__screen--show">
+      <div class="loading__img">
+        <img src="{% static 'logo1.svg' %}" />
+      </div>
+      <!-- <div class="loading__spinner"></div> -->
+      <div class="loading__text">Loading...</div>
+    </div>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <link
-    async
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui-react/dist/umd/semantic-ui-react.min.js"></script>
   </body>
 </html>

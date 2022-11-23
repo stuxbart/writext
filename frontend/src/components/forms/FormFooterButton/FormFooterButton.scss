@@ -1,0 +1,39 @@
+@use "../../../styles/base";
+
+.form__footer-action {
+  flex: 1;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form__footer-action_button {
+  display: block;
+  padding: 1rem 3rem;
+  background-color: base.$black;
+  color: base.$white;
+  border-radius: 5px;
+  border: 2px solid base.$black;
+  font-weight: 600;
+  transition: all 200ms;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: base.$white;
+    color: base.$black;
+  }
+}
+
+.form__footer-action_button--disabled {
+  background-color: base.$black-75;
+  color: base.$white;
+  border: 2px solid base.$black-75;
+
+  &:hover {
+    background-color: base.$black-75;
+    color: base.$white;
+  }
+}
